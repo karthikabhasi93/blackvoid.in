@@ -28,9 +28,9 @@
             <h1 class="display-title reveal">Have an idea?<br><span>Let's build it.</span></h1>
             <p class="lead-copy reveal">Tell us what you're thinking. We'll take it from there.</p>
           </div>
-          <form class="contact-form reveal" onsubmit="return handleContact(event)">
+          <form class="contact-form reveal" id="enquiry-form">
             <label>Name<input required type="text" name="name" placeholder="Your name"></label>
-            <label>Contact<input required type="number" name="number" placeholder="Mobile Number"></label>
+            <input required type="tel" name="number" placeholder="Mobile Number" autocomplete="tel">
             <label>Email<input required type="email" name="email" placeholder="you@example.com"></label>
             <label>Project type<select name="type">
                 <option>Web Application</option>
@@ -50,7 +50,8 @@
     <section class="section section-soft">
       <div class="container contact-info">
         <div><span class="eyebrow">EMAIL</span>
-          <a href="mailto:hello@blackvoid.in">info.blackvoid@gmail.com</a></div>
+          <a href="mailto:hello@blackvoid.in">info.blackvoid@gmail.com</a>
+        </div>
         <div><span class="eyebrow">BASED IN</span>
           <p>Kerala, India</p>
         </div>
@@ -59,7 +60,6 @@
         </div> -->
       </div>
     </section>
-    <script>function handleContact(e) { e.preventDefault(); document.getElementById('form-note').textContent = 'Demo form ready — connect this form to your email/backend before launch.'; return false; }</script>
   </main>
   <div id="site-footer"></div>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

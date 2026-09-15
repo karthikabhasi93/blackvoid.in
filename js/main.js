@@ -34,3 +34,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // Components are fetched asynchronously; wait briefly for their markup before animation setup.
   setTimeout(runAnimations, 80);
 });
+
+// 8075239549
+document.getElementById("enquiry-form")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    const name = form.querySelector('[name="name"]').value.trim();
+    const mobile = form.querySelector('[name="number"]').value.trim();
+    const email = form.querySelector('[name="email"]').value.trim();
+    const type = form.querySelector('[name="type"]').value.trim();
+    const message = form.querySelector('[name="message"]').value.trim();
+
+    // Blackvoid WhatsApp number
+    const whatsappNumber = "918075239549"; // CHANGE THIS
+
+    const whatsappMessage =
+`*New Blackvoid Enquiry*
+
+*Name:* ${name}
+*Mobile:* ${mobile}
+*Email:* ${email}
+*Project Type:* ${type}
+
+*Project Details:*
+${message}`;
+
+    const whatsappURL =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+});
