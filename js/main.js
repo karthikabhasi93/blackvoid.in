@@ -46,9 +46,21 @@ document.getElementById("enquiry-form")?.addEventListener("submit", function (e)
     const email = form.querySelector('[name="email"]').value.trim();
     const type = form.querySelector('[name="type"]').value.trim();
     const message = form.querySelector('[name="message"]').value.trim();
+    const note = document.getElementById("form-note");
 
-    // Blackvoid WhatsApp number
-    const whatsappNumber = "918075239549"; // CHANGE THIS
+    // Indian mobile number validation
+    const mobilePattern = /^[6-9]\d{9}$/;
+
+    if (!mobilePattern.test(mobile)) {
+        note.textContent = "Please enter a valid 10-digit mobile number.";
+        note.classList.add("error");
+        form.querySelector('[name="number"]').focus();
+        return;
+    }
+
+    note.classList.remove("error");
+
+    const whatsappNumber = "918075239549"; 
 
     const whatsappMessage =
 `*New Blackvoid Enquiry*
